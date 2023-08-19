@@ -13,8 +13,31 @@ Least and Most Expensive Toys:
 */
 
 function leastAndMostExpensive(catalog) {
-    
+    let leastExp = Infinity;
+    let leastExpIndex;
+    let mostExp = 0;
+    let mostExpIndex;
+
+    for (let toy in catalog) {
+        if (catalog[toy] < leastExp) {
+            leastExp = catalog[toy];
+            leastExpIndex = toy;
+        }
+    }
+    for (let toy in catalog) {
+        if (catalog[toy] > mostExp) {
+            mostExp = catalog[toy];
+            mostExpIndex = toy;
+        }
+    }
+    return [leastExpIndex, mostExpIndex];
 }
+
+// Example
+const catalog1 = {'ball': 5, 'jumprope': 3, 'yo-yo': 10, 'trading cards': 12}
+const catalog2 = {'skateboard': 50, 'bicycle': 100, 'doll': 10, 'puzzle': 20}
+console.log(leastAndMostExpensive(catalog1)); // prints ['jumprope', 'trading cards']
+console.log(leastAndMostExpensive(catalog2)); // prints ['doll', 'bicycle']
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
