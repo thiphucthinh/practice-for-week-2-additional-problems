@@ -20,9 +20,21 @@
 
 */
 
-function dynamicModulus(num) {
-  // Your code here
+function dynamicModulus(num1) {
+  return function(num2) {
+    return num2 % num1;
+  }
 }
+
+// Example
+const modulusTwo = dynamicModulus(2); // returns a function
+  console.log(modulusTwo(5)); // prints 1
+
+const modulusTen = dynamicModulus(10); // returns a function
+console.log(modulusTen(13)); // prints 3
+
+const modulusNine = dynamicModulus(9); // returns a function
+console.log(modulusNine(30)); // prints 3
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
